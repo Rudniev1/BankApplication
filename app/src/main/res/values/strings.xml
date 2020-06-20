@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Bank Application</string>
+    <!-- menu strings -->
+    <string name="label_hello_bank">Witaj w aplikacji Banku</string>
+    <string name="label_saldo">Saldo PLN</string>
+    <string name="button_transfer">Wykonaj przelew</string>
+    <string name="button_get_credit">Weź pożyczkę</string>
+    <string name="button_logout">Wyloguj</string>
+    <string name="button_blik">Zapłać BLIKiem</string>
+    <string name="label_number_account">Numer Konta</string>
+    <!-- login strings -->
+    <string name="label_login">Zaloguj się</string>
+    <string name="label_login_space">Login</string>
+    <string name="label_password">Hasło</string>
+    <string name="button_login">Zaloguj</string>
+
+    <!-- transfer strings -->
+    <string name="label_make_transfer">Wykonaj przelew</string>
+    <string name="button_back_from_transfer">Cofnij</string>
+    <string name="label_bank_account">Numer konta do przelewu</string>
+    <string name="label_receiver">Odbiorca</string>
+    <string name="label_cash">Kwota</string>
+    <!-- credit strings -->
+    <string name="label_credit_main">Formularz pożyczkowy</string>
+    <string name="label_credit_value">Wpisz kwotę pożyczki(w zł)</string>
+    <string name="label_credit_installment">Ilość rat (od 6 do 20 rat)</string>
+    <string name="label_credit_output">Suma rat przy oprocentowaniu 2% i prowizji od kwoty oprocentowanej 5%:</string>
+    <string name="label_credit_output2">Przelicz raty</string>
+    <string name="button_credit_calculate">Przelicz</string>
+    <string name="editText_value_installment">6</string>
+    <string name="credit_value"> "Całkowity koszt kredytu to $value\n Rata miesięczna to $installmentValue2"</string>
+    <!-- blik strings -->
+    <string name="label_blik">Twój kod BLIK</string>
+    <!-- credit items strings -->
+    <string-array name="array_installments">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+</resources>

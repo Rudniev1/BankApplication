@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">qwerty</string>
+    <string name="haslo">1qazxsw2</string>
+    <string name="account_number">23 6549 2456 1346 8456 2456 8791</string>
+    <string name="value_saldo">9546.54</string>
+
+</resources>

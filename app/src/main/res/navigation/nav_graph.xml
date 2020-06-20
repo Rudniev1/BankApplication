@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeActivity">
+
+    <fragment
+        android:id="@+id/transferActivity"
+        android:name="com.example.bankapplication.TransferActivity"
+        android:label="transfer_layout"
+        tools:layout="@layout/content_transfer" >
+        <action
+            android:id="@+id/action_transferActivity_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeActivity"
+        android:name="com.example.bankapplication.HomeActivity"
+        android:label="home_layout"
+        tools:layout="@layout/content_home" >
+        <action
+            android:id="@+id/action_homeActivity_to_transferActivity"
+            app:destination="@id/transferActivity" />
+        <action
+            android:id="@+id/action_homeActivity_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_homeActivity_to_blikActivity"
+            app:destination="@id/blikActivity" />
+        <action
+            android:id="@+id/action_homeActivity_to_creditActivity"
+            app:destination="@id/creditActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginActivity"
+        android:name="com.example.bankapplication.LoginActivity"
+        android:label="login_layout"
+        tools:layout="@layout/content_login" >
+        <action
+            android:id="@+id/action_loginActivity_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/blikActivity"
+        android:name="com.example.bankapplication.BlikActivity"
+        android:label="blik_layout"
+        tools:layout="@layout/content_blik" >
+        <action
+            android:id="@+id/action_blikActivity_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/creditActivity"
+        android:name="com.example.bankapplication.CreditActivity"
+        android:label="credit_layout"
+        tools:layout="@layout/content_credit" >
+        <action
+            android:id="@+id/action_creditActivity_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+</navigation>
