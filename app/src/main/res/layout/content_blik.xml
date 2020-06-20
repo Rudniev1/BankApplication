@@ -36,7 +36,7 @@
         android:id="@+id/textView_blik_code"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:labelFor="@id/editTextReceiver"
+        android:labelFor="@id/editText_Receiver"
         android:text="0"
         android:textAlignment="center"
         android:textSize="70sp"

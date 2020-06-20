@@ -36,9 +36,9 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextBankNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editText_BankNumber"
+        android:layout_width="320dp"
+        android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -46,6 +46,7 @@
         android:ems="10"
         android:inputType="number"
         android:text=""
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,13 +54,13 @@
         app:layout_constraintVertical_bias="0.149" />
 
     <TextView
-        android:id="@+id/textViewBankNumber"
+        android:id="@+id/textView_BankNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:labelFor="@id/editTextBankNumber"
+        android:labelFor="@id/editText_BankNumber"
         android:text="@string/label_bank_account"
-        app:layout_constraintBottom_toTopOf="@+id/editTextBankNumber"
+        app:layout_constraintBottom_toTopOf="@+id/editText_BankNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,13 +68,13 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textVievReveicer"
+        android:id="@+id/textViev_Reveicer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:labelFor="@id/editTextReceiver"
+        android:labelFor="@id/editText_Receiver"
         android:text="@string/label_receiver"
-        app:layout_constraintBottom_toTopOf="@+id/editTextReceiver"
+        app:layout_constraintBottom_toTopOf="@+id/editText_Receiver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +82,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextReceiver"
+        android:id="@+id/editText_Receiver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -98,12 +99,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/textViewCash"
+        android:id="@+id/textView_Cash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="@string/label_cash"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCash"
+        app:layout_constraintBottom_toTopOf="@+id/editText_Cash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.315"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +112,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextCash"
+        android:id="@+id/editText_Cash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -121,7 +122,7 @@
         android:autofillHints="@string/label_cash"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:labelFor="@id/editTextCash"
+        android:labelFor="@id/editText_Cash"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/button_transfer"
         app:layout_constraintEnd_toEndOf="parent"

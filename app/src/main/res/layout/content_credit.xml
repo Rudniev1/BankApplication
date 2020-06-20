@@ -80,12 +80,12 @@
 
 
     <TextView
-        android:id="@+id/textViewCash"
+        android:id="@+id/textView_Cash"
         android:layout_width="326dp"
         android:layout_height="37dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:labelFor="@id/editTextReceiver"
+        android:labelFor="@id/editText_Receiver"
         android:text="@string/label_credit_output"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
