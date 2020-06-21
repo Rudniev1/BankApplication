@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
@@ -34,8 +35,8 @@ class HomeActivity : Fragment(){
 
         view.findViewById<Button>(R.id.button_make_transfer).setOnClickListener {
             val valueSaldo = view.findViewById<TextView>(R.id.textView_saldo).text.toString().toFloat()
-            val action = HomeActivityDirections.actionHomeActivityToTransferActivity()
-            findNavController().navigate(action)
+            val bundle = bundleOf("saldo" to valueSaldo)
+            findNavController().navigate(R.id.action_homeActivity_to_transferActivity,bundle)
         }
 
         view.findViewById<Button>(R.id.button_credit).setOnClickListener {
