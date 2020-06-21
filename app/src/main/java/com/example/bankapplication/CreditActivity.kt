@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bankapplication.libs.*
@@ -29,8 +30,6 @@ class CreditActivity : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-      //  lateinit var comm: Communicator
 
         val moneyInput = view.findViewById<EditText>(R.id.editText_credit_value)
         moneyInput.filters = arrayOf<InputFilter>(
@@ -69,7 +68,7 @@ class CreditActivity : Fragment() {
             val creditCost = (value - creditValue).round(2)
 
             textResult.text =
-                "Koszt Kredytu to "+ creditCost +"\nCałkowity koszt kredytu to " + value + "\nRata miesięczna to " + installmentValue2
+                "Koszt Kredytu to $creditCost zł\nCałkowity koszt kredytu to $value zł\nRata miesięczna to $installmentValue2 zł"
 
         }
 
@@ -78,10 +77,12 @@ class CreditActivity : Fragment() {
         }
 
         view.findViewById<Button>(R.id.button_credit).setOnClickListener {
+            val creditValue = view.findViewById<EditText>(R.id.editText_credit_value).text
             val currentCount = value
             if(currentCount > 0f) {
-             //   comm.passDataDouble(currentCount)
-                findNavController().navigate(R.id.action_creditActivity_to_homeActivity)
+                val saldo = requireArguments().getFloat("credit") + creditValue.toString().toFloat()
+                val bundle = bundleOf("saldoCredit" to saldo)
+                findNavController().navigate(R.id.action_creditActivity_to_homeActivity,bundle)
                 Toast.makeText(context,"Pożyczka przyznana",Toast.LENGTH_SHORT).show()
             }
         }

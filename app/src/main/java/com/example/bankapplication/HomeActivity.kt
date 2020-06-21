@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
+
 class HomeActivity : Fragment(){
 
 
@@ -32,36 +33,45 @@ class HomeActivity : Fragment(){
         var textSaldo = view.findViewById<TextView>(R.id.textView_saldo)
         var saldoFinal: Float = 0f
         val saldoTransfer = requireArguments().getFloat("saldoTransfer")
+        val saldoCredit = requireArguments().getFloat("saldoCredit")
 
-        if(saldoTransfer != 0f) {
-            println("saldoFinal:  $saldoFinal")
-            println("saldo Transfer: $saldoTransfer")
-                saldoFinal =  saldoTransfer
-           textSaldo.text = saldoFinal.toString()
-        }
-        else
+        println("saldo Credit: $saldoCredit")
+        println("saldoFinal:  $saldoFinal")
+        println("saldo Transfer: $saldoTransfer")
+
+        if(saldoTransfer == 0f && saldoCredit == 0f )
         {
             view.findViewById<TextView>(R.id.textView_saldo).text = getString(R.string.value_saldo)
+            saldoFinal = getString(R.string.value_saldo).toFloat().round(2)
         }
+        else
+       {
+           saldoFinal =  saldoTransfer + saldoCredit
+           textSaldo.text = saldoFinal.toString()
+       }
 
         view.findViewById<Button>(R.id.button_logout).setOnClickListener {
             findNavController().navigate(R.id.action_homeActivity_to_loginActivity)
         }
 
         view.findViewById<Button>(R.id.button_make_transfer).setOnClickListener {
-            val valueSaldo = textSaldo.text.toString().toFloat()
-            val bundle = bundleOf("saldo" to saldoFinal)
+            val bundle = bundleOf("transfer" to saldoFinal)
             findNavController().navigate(R.id.action_homeActivity_to_transferActivity,bundle)
         }
 
         view.findViewById<Button>(R.id.button_credit).setOnClickListener {
-            val valueSaldo = textSaldo.text.toString().toFloat()
             val bundle = bundleOf("credit" to saldoFinal)
-            findNavController().navigate(R.id.action_homeActivity_to_creditActivity)
+            findNavController().navigate(R.id.action_homeActivity_to_creditActivity,bundle)
         }
 
         view.findViewById<Button>(R.id.button_blik).setOnClickListener {
             findNavController().navigate(R.id.action_homeActivity_to_blikActivity)
         }
+    }
+
+    fun Float.round(decimals: Int): Float {
+        var multiplier = 1.0
+        repeat(decimals) { multiplier *= 10 }
+        return (kotlin.math.round(this * multiplier) / multiplier).toFloat()
     }
 }

@@ -48,7 +48,7 @@ class TransferActivity: Fragment(){
                 val receiver = view.findViewById<EditText>(R.id.editText_Receiver).text.toString()
 
                 if(bankNumber != "" && (cash != "" || cash != "0") && receiver != "") {
-                    val saldo = arguments?.getFloat("saldo")?.minus(cash.toFloat())
+                    val saldo = arguments?.getFloat("transfer")?.minus(cash.toFloat())
                     val bundle = bundleOf("saldoTransfer" to saldo)
                     findNavController().navigate(R.id.action_transferActivity_to_homeActivity,bundle)
                     Toast.makeText(context, "Przelew wykonany pomyślnie", Toast.LENGTH_SHORT).show()
