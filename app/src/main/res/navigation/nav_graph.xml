@@ -18,7 +18,8 @@
         android:id="@+id/homeActivity"
         android:name="com.example.bankapplication.HomeActivity"
         android:label="home_layout"
-        tools:layout="@layout/content_home" >
+        tools:layout="@layout/content_home"
+        app:startDestination="@id/action_homeActivity_to_blikActivity">
         <action
             android:id="@+id/action_homeActivity_to_transferActivity"
             app:destination="@id/transferActivity" />
@@ -31,6 +32,10 @@
         <action
             android:id="@+id/action_homeActivity_to_creditActivity"
             app:destination="@id/creditActivity" />
+        <argument
+            android:name="transferValue"
+            app:argType="float" />
+
     </fragment>
     <fragment
         android:id="@+id/loginActivity"
