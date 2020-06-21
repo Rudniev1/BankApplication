@@ -8,6 +8,7 @@
     <string name="button_logout">Wyloguj</string>
     <string name="button_blik">Zapłać BLIKiem</string>
     <string name="label_number_account">Numer Konta</string>
+    <string name="label_saldo_value_final">1</string>
     <!-- login strings -->
     <string name="label_login">Zaloguj się</string>
     <string name="label_login_space">Login</string>

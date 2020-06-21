@@ -18,6 +18,7 @@ class HomeActivity : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.content_home, container, false)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,18 +29,34 @@ class HomeActivity : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//
+        var textSaldo = view.findViewById<TextView>(R.id.textView_saldo)
+        var saldoFinal: Float = 0f
+        val saldoTransfer = requireArguments().getFloat("saldoTransfer")
+
+        if(saldoTransfer != 0f) {
+            println("saldoFinal:  $saldoFinal")
+            println("saldo Transfer: $saldoTransfer")
+                saldoFinal =  saldoTransfer
+           textSaldo.text = saldoFinal.toString()
+        }
+        else
+        {
+            view.findViewById<TextView>(R.id.textView_saldo).text = getString(R.string.value_saldo)
+        }
+
         view.findViewById<Button>(R.id.button_logout).setOnClickListener {
             findNavController().navigate(R.id.action_homeActivity_to_loginActivity)
         }
 
         view.findViewById<Button>(R.id.button_make_transfer).setOnClickListener {
-            val valueSaldo = view.findViewById<TextView>(R.id.textView_saldo).text.toString().toFloat()
-            val bundle = bundleOf("saldo" to valueSaldo)
+            val valueSaldo = textSaldo.text.toString().toFloat()
+            val bundle = bundleOf("saldo" to saldoFinal)
             findNavController().navigate(R.id.action_homeActivity_to_transferActivity,bundle)
         }
 
         view.findViewById<Button>(R.id.button_credit).setOnClickListener {
+            val valueSaldo = textSaldo.text.toString().toFloat()
+            val bundle = bundleOf("credit" to saldoFinal)
             findNavController().navigate(R.id.action_homeActivity_to_creditActivity)
         }
 

@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.bankapplication.libs.DecimalDigitsInputFilter
@@ -46,8 +47,10 @@ class TransferActivity: Fragment(){
                 val cash = view.findViewById<EditText>(R.id.editText_Cash).text.toString()
                 val receiver = view.findViewById<EditText>(R.id.editText_Receiver).text.toString()
 
-                if(bankNumber != "" && cash != "" && receiver != "") {
-                    findNavController().navigate(R.id.action_transferActivity_to_homeActivity)
+                if(bankNumber != "" && (cash != "" || cash != "0") && receiver != "") {
+                    val saldo = arguments?.getFloat("saldo")?.minus(cash.toFloat())
+                    val bundle = bundleOf("saldoTransfer" to saldo)
+                    findNavController().navigate(R.id.action_transferActivity_to_homeActivity,bundle)
                     Toast.makeText(context, "Przelew wykonany pomyślnie", Toast.LENGTH_SHORT).show()
                 }
                 else
